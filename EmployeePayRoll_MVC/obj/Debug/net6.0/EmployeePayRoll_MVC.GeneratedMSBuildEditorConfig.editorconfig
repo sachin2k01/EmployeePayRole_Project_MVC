@@ -14,9 +14,13 @@ build_property.EnableComHosting =
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
-build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = true
 build_property.MSBuildProjectDirectory = C:\Users\Hp\source\repos\EmployeePayRoll\EmployeePayRoll_MVC
 build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/Hp/source/repos/EmployeePayRoll/EmployeePayRoll_MVC/Views/Employee/GetAllEmployee.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcR2V0QWxsRW1wbG95ZWUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Hp/source/repos/EmployeePayRoll/EmployeePayRoll_MVC/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=

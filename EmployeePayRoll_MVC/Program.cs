@@ -1,3 +1,8 @@
+using BusinessLayer.Interface;
+using BusinessLayer.Service;
+using RepositoryLayer.Interface;
+using RepositoryLayer.Services;
+
 namespace EmployeePayRoll_MVC
 {
     public class Program
@@ -7,7 +12,10 @@ namespace EmployeePayRoll_MVC
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
-            builder.Services.AddControllersWithViews();
+            builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation(); ;
+            builder.Services.AddRazorPages();
+            builder.Services.AddTransient<IEmployeeBusiness, EmployeeBusiness>();
+            builder.Services.AddTransient<IEmployeeRepo, EmployeeRepo>();
 
             var app = builder.Build();
 

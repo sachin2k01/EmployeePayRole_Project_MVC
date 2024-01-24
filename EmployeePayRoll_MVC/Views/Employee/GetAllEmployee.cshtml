@@ -1,0 +1,43 @@
+﻿@model IEnumerable<RepositoryLayer.Entity.EmployeeEntity>
+@{
+    ViewData["Title"] = "GetAllEmployee";
+}
+
+<h1>GetAllEmployee</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>EmployeeId</th>
+            <th>EmployeeName</th>
+            <th>ImagePath</th>
+            <th>Gender</th>
+            <th>Department</th>
+            <th>Salary</th>
+            <th>StartDate</th>
+            <th>Notes</th>
+            <!-- Add more headers for additional properties -->
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var employee in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(model => employee.EmployeeId)</td>
+                <td>@Html.DisplayFor(model => employee.EmployeeName)</td>
+                <td>@Html.DisplayFor(model => employee.ImagePath)</td>
+                <td>@Html.DisplayFor(model => employee.Gender)</td>
+                <td>@Html.DisplayFor(model => employee.Department)</td>
+                <td>@Html.DisplayFor(model => employee.Salary)</td>
+                <td>@Html.DisplayFor(model => employee.StartDate)</td>
+                <td>@Html.DisplayFor(model => employee.Notes)</td>
+                <!-- Add more cells for additional properties -->
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    <a asp-action="Index">Back to List</a>
+</div>
