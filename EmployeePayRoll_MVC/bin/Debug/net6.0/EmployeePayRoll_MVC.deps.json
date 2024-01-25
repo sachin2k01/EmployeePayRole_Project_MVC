@@ -3127,12 +3127,27 @@
           "BusinessLayer.dll": {}
         }
       },
-      "RepositoryLayer/1.0.0": {
+      "ModelLayer/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation": "6.0.0",
           "Microsoft.Data.SqlClient": "5.1.4",
           "Microsoft.EntityFrameworkCore": "6.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.0"
+        },
+        "runtime": {
+          "ModelLayer.dll": {}
+        },
+        "compile": {
+          "ModelLayer.dll": {}
+        }
+      },
+      "RepositoryLayer/1.0.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation": "6.0.0",
+          "Microsoft.Data.SqlClient": "5.1.4",
+          "Microsoft.EntityFrameworkCore": "6.0.0",
+          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.0",
+          "ModelLayer": "1.0.0"
         },
         "runtime": {
           "RepositoryLayer.dll": {}
@@ -6453,6 +6468,11 @@
       "hashPath": "system.xml.xdocument.4.3.0.nupkg.sha512"
     },
     "BusinessLayer/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ModelLayer/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

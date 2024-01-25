@@ -290,8 +290,10 @@ C:\Users\Hp\source\repos\EmployeePayRoll\BusinessLayer\bin\Debug\net6.0\refs\Sys
 C:\Users\Hp\source\repos\EmployeePayRoll\BusinessLayer\bin\Debug\net6.0\refs\System.Xml.XPath.dll
 C:\Users\Hp\source\repos\EmployeePayRoll\BusinessLayer\bin\Debug\net6.0\refs\System.Xml.XPath.XDocument.dll
 C:\Users\Hp\source\repos\EmployeePayRoll\BusinessLayer\bin\Debug\net6.0\refs\WindowsBase.dll
+C:\Users\Hp\source\repos\EmployeePayRoll\BusinessLayer\bin\Debug\net6.0\ModelLayer.dll
 C:\Users\Hp\source\repos\EmployeePayRoll\BusinessLayer\bin\Debug\net6.0\RepositoryLayer.dll
 C:\Users\Hp\source\repos\EmployeePayRoll\BusinessLayer\bin\Debug\net6.0\RepositoryLayer.pdb
+C:\Users\Hp\source\repos\EmployeePayRoll\BusinessLayer\bin\Debug\net6.0\ModelLayer.pdb
 C:\Users\Hp\source\repos\EmployeePayRoll\BusinessLayer\obj\Debug\net6.0\BusinessLayer.csproj.AssemblyReference.cache
 C:\Users\Hp\source\repos\EmployeePayRoll\BusinessLayer\obj\Debug\net6.0\BusinessLayer.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Hp\source\repos\EmployeePayRoll\BusinessLayer\obj\Debug\net6.0\BusinessLayer.AssemblyInfoInputs.cache

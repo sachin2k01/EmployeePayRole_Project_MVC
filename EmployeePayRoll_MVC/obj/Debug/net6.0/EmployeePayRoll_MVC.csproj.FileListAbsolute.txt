@@ -519,9 +519,11 @@ C:\Users\Hp\source\repos\EmployeePayRoll\EmployeePayRoll_MVC\bin\Debug\net6.0\ru
 C:\Users\Hp\source\repos\EmployeePayRoll\EmployeePayRoll_MVC\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\Hp\source\repos\EmployeePayRoll\EmployeePayRoll_MVC\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 C:\Users\Hp\source\repos\EmployeePayRoll\EmployeePayRoll_MVC\bin\Debug\net6.0\BusinessLayer.dll
+C:\Users\Hp\source\repos\EmployeePayRoll\EmployeePayRoll_MVC\bin\Debug\net6.0\ModelLayer.dll
 C:\Users\Hp\source\repos\EmployeePayRoll\EmployeePayRoll_MVC\bin\Debug\net6.0\RepositoryLayer.dll
 C:\Users\Hp\source\repos\EmployeePayRoll\EmployeePayRoll_MVC\bin\Debug\net6.0\BusinessLayer.pdb
 C:\Users\Hp\source\repos\EmployeePayRoll\EmployeePayRoll_MVC\bin\Debug\net6.0\RepositoryLayer.pdb
+C:\Users\Hp\source\repos\EmployeePayRoll\EmployeePayRoll_MVC\bin\Debug\net6.0\ModelLayer.pdb
 C:\Users\Hp\source\repos\EmployeePayRoll\EmployeePayRoll_MVC\obj\Debug\net6.0\EmployeePayRoll_MVC.csproj.AssemblyReference.cache
 C:\Users\Hp\source\repos\EmployeePayRoll\EmployeePayRoll_MVC\obj\Debug\net6.0\EmployeePayRoll_MVC.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Hp\source\repos\EmployeePayRoll\EmployeePayRoll_MVC\obj\Debug\net6.0\EmployeePayRoll_MVC.AssemblyInfoInputs.cache

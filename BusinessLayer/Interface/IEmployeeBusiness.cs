@@ -1,4 +1,5 @@
-﻿using RepositoryLayer.Entity;
+﻿using ModelLayer.Models;
+using RepositoryLayer.Entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,5 +11,9 @@ namespace BusinessLayer.Interface
     public interface IEmployeeBusiness
     {
         public List<EmployeeEntity> GetAllEmployee();
+        public EmployeeModel AddEmployee(EmployeeModel employeeModel);
+
+        public EmployeeEntity DeleteEmployeeById(int employeeId);
+        public EmployeeEntity GetEmployeeById(int employeeId);
     }
 }

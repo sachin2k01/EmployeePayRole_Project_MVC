@@ -32,12 +32,20 @@
                 <td>@Html.DisplayFor(model => employee.StartDate)</td>
                 <td>@Html.DisplayFor(model => employee.Notes)</td>
                 <!-- Add more cells for additional properties -->
+                <td>
+                    @Html.ActionLink("Delete", "Delete", new { empId = employee.EmployeeId }, new { @class = "btn btn-danger", style = "margin-right: 5px; background-color: #dc3545; color: white;" })
+                </td>
+
             </tr>
         }
     </tbody>
 </table>
 
+
+
 <div>
     @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
     <a asp-action="Index">Back to List</a>
 </div>
+
+
