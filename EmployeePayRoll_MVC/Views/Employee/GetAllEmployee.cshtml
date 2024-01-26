@@ -1,51 +1,85 @@
 ﻿@model IEnumerable<RepositoryLayer.Entity.EmployeeEntity>
+
 @{
     ViewData["Title"] = "GetAllEmployee";
 }
 
-<h1>GetAllEmployee</h1>
+<h1>Employee Details</h1>
 
+<p>
+    <a asp-action="CreateEmployee">Create New</a>
+</p>
+
+<form id="searchForm" method="get" asp-action="SearchEmployee" data-ajax="true" data-ajax-update="#searchResults">
+    <p>
+        <input type="search" placeholder="Search Employee Name.." value="@ViewData["GetAllEmployee"]" name="searchterm" style="width:500px;" />
+        <input type="submit" value="Search" class="btn btn-primary" />|
+        <a asp-action="GetAllEmployee">Back to List</a>
+    </p>
+</form>
 <table class="table">
     <thead>
         <tr>
-            <th>EmployeeId</th>
-            <th>EmployeeName</th>
-            <th>ImagePath</th>
-            <th>Gender</th>
-            <th>Department</th>
-            <th>Salary</th>
-            <th>StartDate</th>
-            <th>Notes</th>
-            <!-- Add more headers for additional properties -->
+            <th>
+                @Html.DisplayNameFor(model => model.EmployeeId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EmployeeName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ImagePath)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Gender)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Department)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Salary)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StartDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Notes)
+            </th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
-        @foreach (var employee in Model)
-        {
-            <tr>
-                <td>@Html.DisplayFor(model => employee.EmployeeId)</td>
-                <td>@Html.DisplayFor(model => employee.EmployeeName)</td>
-                <td>@Html.DisplayFor(model => employee.ImagePath)</td>
-                <td>@Html.DisplayFor(model => employee.Gender)</td>
-                <td>@Html.DisplayFor(model => employee.Department)</td>
-                <td>@Html.DisplayFor(model => employee.Salary)</td>
-                <td>@Html.DisplayFor(model => employee.StartDate)</td>
-                <td>@Html.DisplayFor(model => employee.Notes)</td>
-                <!-- Add more cells for additional properties -->
-                <td>
-                    @Html.ActionLink("Delete", "Delete", new { empId = employee.EmployeeId }, new { @class = "btn btn-danger", style = "margin-right: 5px; background-color: #dc3545; color: white;" })
-                </td>
-
-            </tr>
-        }
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmployeeId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmployeeName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ImagePath)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Gender)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Department)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Salary)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StartDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Notes)
+            </td>
+            <td>
+                    @Html.ActionLink("Edit", "UpdateEmp", new { empId = item.EmployeeId },new { @class="btn btn-primary"}) |
+                    @Html.ActionLink("Details", "GetEmployeeDetials", new { empId = item.EmployeeId },new{ @class="btn btn-success"}) |
+                    @Html.ActionLink("Delete", "Delete", new { empId = item.EmployeeId }, new { @class = "btn btn-danger", style = "margin-right: 5px; background-color: #dc3545; color: white;" })
+            </td>
+        </tr>
+}
     </tbody>
 </table>
-
-
-
-<div>
-    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
-    <a asp-action="Index">Back to List</a>
-</div>
-
-

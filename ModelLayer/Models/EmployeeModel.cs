@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -9,24 +10,37 @@ namespace ModelLayer.Models
 {
     public class EmployeeModel
     {
-        [Required]
+        [Required(ErrorMessage ="Enter Employee Name")]
         public string EmployeeName { get; set; }
 
-        [Required]
+
+
+        [Required(ErrorMessage = "Add Profile path")]
         public string ImagePath { get; set; }
 
-        [Required]
+
+
+        [Required(ErrorMessage ="Gender is Required")]
         public string Gender { get; set; }
 
-        [Required]
+
+
+        [Required(ErrorMessage ="Enter Department")]
         public string Department { get; set; }
-        [Required]
+
+
+
+        [Required(ErrorMessage ="Enter Employee Salary")]
         public Decimal Salary { get; set; }
 
-        [Required]
+
+
+        [Required(ErrorMessage ="Select Start Date")]
         public DateTime StartDate { get; set; }
 
-        [Required]
+
+
+        [Required(ErrorMessage ="Enter a Note For Employee")]
         public string Notes { get; set; }
     }
 }

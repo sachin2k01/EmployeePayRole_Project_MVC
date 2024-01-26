@@ -37,5 +37,15 @@ namespace BusinessLayer.Service
         {
             return _repo.GetEmployeeById(employeeId);
         }
+
+        public EmployeeEntity UpdateEmployee(EmployeeEntity employee)
+        {
+            return _repo.UpdateEmployee(employee);
+        }
+
+        public List<EmployeeEntity> SearchEmployeeByName(string searchName)
+        {
+            return _repo.SearchEmployeeByName(searchName);
+        }
     }
 }

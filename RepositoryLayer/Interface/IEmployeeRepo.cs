@@ -16,5 +16,9 @@ namespace RepositoryLayer.Interface
         public EmployeeEntity DeleteEmployeeById(int employeeId);
 
         public EmployeeEntity GetEmployeeById(int employeeId);
+
+        public EmployeeEntity UpdateEmployee(EmployeeEntity employee);
+
+        public List<EmployeeEntity> SearchEmployeeByName(string searchName);
     }
 }

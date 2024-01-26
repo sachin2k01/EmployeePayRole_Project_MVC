@@ -1,17 +1,22 @@
-﻿@model ModelLayer.Models.EmployeeModel
+﻿@model RepositoryLayer.Entity.EmployeeEntity
 
 @{
-    ViewData["Title"] = "CreateEmployee";
+    ViewData["Title"] = "UpdateEmp";
 }
 
-<h1>CreateEmployee</h1>
+<h1>UpdateEmp</h1>
 
-<h4>EmployeeModel</h4>
+<h4>EmployeeEntity</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="CreateEmployee">
+        <form asp-action="UpdateEmp">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="EmployeeId" class="control-label"></label>
+                <input asp-for="EmployeeId" class="form-control" readonly/>
+                <span asp-validation-for="EmployeeId" class="text-danger"></span>
+            </div>
             <div class="form-group">
                 <label asp-for="EmployeeName" class="control-label"></label>
                 <input asp-for="EmployeeName" class="form-control" />
@@ -48,7 +53,7 @@
                 <span asp-validation-for="Notes" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Save" class="btn btn-primary" />
             </div>
         </form>
     </div>

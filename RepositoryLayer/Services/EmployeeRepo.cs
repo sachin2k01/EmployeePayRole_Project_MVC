@@ -2,12 +2,10 @@
 using ModelLayer.Models;
 using RepositoryLayer.Entity;
 using RepositoryLayer.Interface;
-using System;
-using System.Collections.Generic;
+
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Data.SqlTypes;
+
 
 namespace RepositoryLayer.Services
 {
@@ -104,7 +102,6 @@ namespace RepositoryLayer.Services
         }
 
 
-
         public EmployeeEntity GetEmployeeById(int employeeId)
         {
             using (SqlConnection conn = new SqlConnection(connectionString))
@@ -139,9 +136,7 @@ namespace RepositoryLayer.Services
                 }
                 catch (Exception ex)
                 {
-                    // Handle the exception (log it, throw it, etc.)
-                    // Example: Console.WriteLine("Error: " + ex.Message);
-                    // You might want to log the error for debugging purposes.
+
                 }
                 finally
                 {
@@ -152,6 +147,65 @@ namespace RepositoryLayer.Services
             }
         }
 
+        public EmployeeEntity UpdateEmployee(EmployeeEntity employee)
+        {
+            using(SqlConnection connection=new SqlConnection(connectionString))
+            {
+                connection.Open();
+                SqlCommand cmd = new SqlCommand("spUpdateEmployee", connection);
+                cmd.CommandType= CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@EmployeeId", employee.EmployeeId);
+                cmd.Parameters.AddWithValue("@EmployeeName", employee.EmployeeName);
+                cmd.Parameters.AddWithValue("@ImagePath", employee.ImagePath);
+                cmd.Parameters.AddWithValue("@Gender", employee.Gender);
+                cmd.Parameters.AddWithValue("@Department", employee.Department);
+                cmd.Parameters.AddWithValue("@Salary", employee.Salary);
+
+                DateTime startDate = (employee.StartDate >= SqlDateTime.MinValue.Value && employee.StartDate <= SqlDateTime.MaxValue.Value)
+                ? employee.StartDate : SqlDateTime.MinValue.Value;
+
+                cmd.Parameters.AddWithValue("@StartDate", employee.StartDate);
+                cmd.Parameters.AddWithValue("@Notes", employee.Notes);
+                cmd.ExecuteNonQuery();
+                connection.Close();
+            }
+            return employee;
+        }
+
+        public List<EmployeeEntity> SearchEmployeeByName(string searchName)
+        {
+            List<EmployeeEntity> employeeRes= new List<EmployeeEntity>();
+            using(SqlConnection connection=new SqlConnection(connectionString))
+            {
+                connection.Open();
+                SqlCommand cmd = new SqlCommand("spSearchEmployeesByName", connection);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@SearchTerm", searchName);
+
+                using(SqlDataReader  reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        EmployeeEntity employee = new EmployeeEntity()
+                        {
+                            EmployeeId = Convert.ToInt32(reader["EmployeeId"]),
+                            EmployeeName = reader["EmployeeName"].ToString(),
+                            ImagePath = reader["ImagePath"].ToString(),
+                            Gender = reader["Gender"].ToString(),
+                            Department = reader["Department"].ToString(),
+                            Salary = Convert.ToDecimal(reader["Salary"]),
+                            StartDate = Convert.ToDateTime(reader["StartDate"]),
+                            Notes = reader["Notes"].ToString()
+                        };
+
+                        employeeRes.Add(employee);
+
+                    }
+                }
+            }
+            return employeeRes;
+        }
     }
 
 }

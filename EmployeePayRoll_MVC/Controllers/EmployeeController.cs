@@ -94,5 +94,78 @@ namespace EmployeePayRoll_MVC.Controllers
             }
         }
 
+        [HttpGet]
+        [Route("Update/{empId}")]
+        public IActionResult UpdateEmp(int  empId)
+        {
+            if(empId == 0)
+            {
+                return NotFound();
+            }
+            EmployeeEntity employee=_employeeBusiness.GetEmployeeById(empId);
+            if(employee == null)
+            {
+                return NotFound();
+            }
+            return View(employee);
+        }
+
+        [HttpPost]
+        [Route("Update/{empId}")]
+        public IActionResult UpdateEmp(int empId,[Bind]EmployeeEntity employee)
+        {
+            try
+            {
+                if(empId!=employee.EmployeeId)
+                {
+                    return NotFound();
+                }
+                if(ModelState.IsValid)
+                {
+                    var result = _employeeBusiness.UpdateEmployee(employee);
+                    return RedirectToAction("GetAllEmployee");
+                }
+                return View();
+
+            }
+            catch (Exception )
+            {
+                return View(employee);
+            }
+        }
+
+
+        public IActionResult GetEmployeeDetials(int empId)
+        {
+            try
+            {
+                if (empId == 0)
+                {
+                    return NotFound();
+                }
+                EmployeeEntity employee = _employeeBusiness.GetEmployeeById(empId);
+                if (employee == null)
+                {
+                    return NotFound();
+                }
+                return View(employee);
+            }
+            catch (Exception)
+            {
+
+                return View();
+            }
+        }
+
+        [HttpGet]
+        [Route("SearchEmployee")]
+        public IActionResult SearchEmployee(string searchterm)
+        {
+            ViewData["GetAllEmployee"] = searchterm;
+            List<EmployeeEntity> employees = _employeeBusiness.SearchEmployeeByName(searchterm);
+            return View("GetAllEmployee", employees);
+        }
+
+
     }
 }
