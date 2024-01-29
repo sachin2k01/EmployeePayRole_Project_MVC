@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\EmployeePayRoll_MVC.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\Hp\\source\\repos\\EmployeePayRoll\\EmployeePayRoll_MVC\\wwwroot\\css\\GetAllEmployee.css",
+      "PackagePath": "staticwebassets\\css\\GetAllEmployee.css"
+    },
+    {
       "Id": "C:\\Users\\Hp\\source\\repos\\EmployeePayRoll\\EmployeePayRoll_MVC\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },

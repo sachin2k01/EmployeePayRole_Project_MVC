@@ -3,13 +3,36 @@
 @{
     ViewData["Title"] = "CreateEmployee";
 }
+<style>
+    a {
+        text-decoration: none;
+    }
 
-<h1>CreateEmployee</h1>
+        a:link {
+            color: blue;
+        }
+
+        a:visited {
+            color: blue;
+        }
+
+        a:hover {
+            color: palevioletred;
+        }
+
+        .row{
+            align-self:center;
+        }
+</style>
+
+
+
+<h1>Create Employee</h1>
 
 <h4>EmployeeModel</h4>
 <hr />
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-4" style="align-content:center">
         <form asp-action="CreateEmployee">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">

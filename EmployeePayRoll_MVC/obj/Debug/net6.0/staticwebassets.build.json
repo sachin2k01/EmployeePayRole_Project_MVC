@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "bdMz//52JqWhd20FBpYHA9B6QWIbXfgmLxTKZZmAtwA=",
+  "Hash": "JPdGUHrD5xP4qQtNIFiK+RdYB2eFiy8ibLCSr5N6i+I=",
   "Source": "EmployeePayRoll_MVC",
   "BasePath": "_content/EmployeePayRoll_MVC",
   "Mode": "Default",
@@ -53,6 +53,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\Hp\\source\\repos\\EmployeePayRoll\\EmployeePayRoll_MVC\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\EmployeePayRoll_MVC.bundle.scp.css"
+    },
+    {
+      "Identity": "C:\\Users\\Hp\\source\\repos\\EmployeePayRoll\\EmployeePayRoll_MVC\\wwwroot\\css\\GetAllEmployee.css",
+      "SourceId": "EmployeePayRoll_MVC",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Hp\\source\\repos\\EmployeePayRoll\\EmployeePayRoll_MVC\\wwwroot\\",
+      "BasePath": "_content/EmployeePayRoll_MVC",
+      "RelativePath": "css/GetAllEmployee.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\GetAllEmployee.css"
     },
     {
       "Identity": "C:\\Users\\Hp\\source\\repos\\EmployeePayRoll\\EmployeePayRoll_MVC\\wwwroot\\css\\site.css",
