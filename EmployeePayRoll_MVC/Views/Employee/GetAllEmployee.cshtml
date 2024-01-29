@@ -4,15 +4,27 @@
     ViewData["Title"] = "GetAllEmployee";
 }
 <style>
+
+    .container {
+        width:90%;
+        display:flex;
+        justify-content:center;
+        background-color: #5bc3eb;
+        border-radius:24px;
+        margin-top:40px;
+        padding:0px 60px;
+    }
+
+
     thead,
     tfoot {
-        background-color: #3f87a6;
+        background-color: #42515F;
         color: #fff;
     }
 
     tbody {
         background-color: #e4f0f5;
-        font-family:'Times New Roman', Times, serif;
+        font-family:sans-serif;
         font-style:normal;
     }
 
@@ -30,26 +42,58 @@
     th {
         border: 1px solid rgb(190, 190, 190);
         padding: 5px 10px;
+        text-align:center;
+            
     }
 
-    td {
-        text-align: center;
+    h1{
+        padding:10px;
+        text-align:center;
+        color:floralwhite;
+        font-size:40px;
+        font-family: 'Roboto', sans-serif;
+        font-weight:600;
     }
+    .footer{
+        padding:10px;
+        position:absolute;
+        bottom:0;
+        width:360px;
+        
+    }
+
+    .back-btn{
+        background-color:coral;
+    }
+    .btn-ctn{
+        display:flex;
+        justify-content:space-between;
+    }
+
+    #searchForm{
+        border-radius: 24px;
+
+    }
+
+ 
 
 </style>
 
 <h1>Employee Details</h1>
 
-<p>
-    <a asp-action="CreateEmployee">Create New</a>
-</p>
 
 <form id="searchForm" method="get" asp-action="SearchEmployee" data-ajax="true" data-ajax-update="#searchResults">
-    <p>
-        <input type="search" placeholder="Search Employee Name.." value="@ViewData["GetAllEmployee"]" name="searchterm" style="width:500px;" />
-        <input type="submit" value="Search" class="btn btn-primary" /> |
-        <a asp-action="GetAllEmployee">Back to List</a>
-    </p>
+    <div class="btn-ctn">
+        <div>
+        <input type="search" placeholder="Search Employee Name.." value="@ViewData["GetAllEmployee"]" name="searchterm" style="width:500px; border-radius:10px;" />
+        <input type="submit" value="Search" class="btn btn-primary"  /> |
+        @Html.ActionLink("Back", "GetAllEmployee", new { /*empId = item.EmployeeId*/ }, new { @class = "btn back-btn" })
+        </div>
+        <div>
+        @Html.ActionLink("Login", "", new { /*empId = item.EmployeeId*/ }, new { @class = "btn btn-danger" })
+        @Html.ActionLink("Create", "CreateEmployee", new { /*empId = item.EmployeeId*/ }, new { @class = "btn btn-warning" })
+        </div>
+    </div>
 </form>
 <table class="table">
     <thead>

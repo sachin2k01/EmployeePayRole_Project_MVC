@@ -183,25 +183,33 @@ namespace RepositoryLayer.Services
 
                 cmd.Parameters.AddWithValue("@SearchTerm", searchName);
 
-                using(SqlDataReader  reader = cmd.ExecuteReader())
+                try
                 {
-                    while (reader.Read())
+                    using (SqlDataReader reader = cmd.ExecuteReader())
                     {
-                        EmployeeEntity employee = new EmployeeEntity()
+                        while (reader.Read())
                         {
-                            EmployeeId = Convert.ToInt32(reader["EmployeeId"]),
-                            EmployeeName = reader["EmployeeName"].ToString(),
-                            ImagePath = reader["ImagePath"].ToString(),
-                            Gender = reader["Gender"].ToString(),
-                            Department = reader["Department"].ToString(),
-                            Salary = Convert.ToDecimal(reader["Salary"]),
-                            StartDate = Convert.ToDateTime(reader["StartDate"]),
-                            Notes = reader["Notes"].ToString()
-                        };
+                            EmployeeEntity employee = new EmployeeEntity()
+                            {
+                                EmployeeId = Convert.ToInt32(reader["EmployeeId"]),
+                                EmployeeName = reader["EmployeeName"].ToString(),
+                                ImagePath = reader["ImagePath"].ToString(),
+                                Gender = reader["Gender"].ToString(),
+                                Department = reader["Department"].ToString(),
+                                Salary = Convert.ToDecimal(reader["Salary"]),
+                                StartDate = Convert.ToDateTime(reader["StartDate"]),
+                                Notes = reader["Notes"].ToString()
+                            };
 
-                        employeeRes.Add(employee);
+                            employeeRes.Add(employee);
 
+                        }
                     }
+                }
+                catch (Exception ex)
+                {
+
+                    throw ex;
                 }
             }
             return employeeRes;
