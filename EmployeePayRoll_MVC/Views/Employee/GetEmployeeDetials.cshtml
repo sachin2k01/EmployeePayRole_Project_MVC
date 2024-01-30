@@ -3,11 +3,22 @@
 @{
     ViewData["Title"] = "GetEmployeeDetials";
 }
+<style>
+    .footer {
+        padding: 10px;
+        position: absolute;
+        bottom: 0;
+        width: 360px;
+        color: white;
+    }
 
-<h1>GetEmployeeDetials</h1>
+    .container {
+        margin-top: 50px;
+    }
+</style>
+<h1>EMPLOYEE DETAILS</h1>
 
 <div>
-    <h4>EmployeeEntity</h4>
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
@@ -62,5 +73,5 @@
 </div>
 <div>
     @Html.ActionLink("Edit", "UpdateEmp", new { empId = Model.EmployeeId }, new { @class = "btn btn-primary" }) |
-    <a asp-action="GetAllEmployee">Back to List</a>
+    <a asp-action="GetAllEmployee" style="color:white;">Back to List</a>
 </div>

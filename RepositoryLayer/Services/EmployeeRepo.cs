@@ -214,6 +214,29 @@ namespace RepositoryLayer.Services
             }
             return employeeRes;
         }
+
+
+        public EmployeeEntity EmployeeLogin(LoginModel login)
+        {
+            if(login == null)
+            {
+                return null;
+            }
+            if(login.EmployeeId<=0 || string.IsNullOrEmpty(login.EmployeeName))
+            {
+                return null;
+            }
+            EmployeeEntity employee=GetEmployeeById(login.EmployeeId);
+            if(employee == null)
+            {
+                return null;
+            }
+            if(employee.EmployeeName!=login.EmployeeName)
+            {
+                return null;
+            }
+            return employee;
+        }
     }
 
 }

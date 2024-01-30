@@ -43,7 +43,7 @@ namespace EmployeePayRoll_MVC.Controllers
             }
             catch (Exception ex)
             {
-
+                ModelState.AddModelError(string.Empty, "An error occurred while processing your request.");
                 return View(empModel);
             }
 
@@ -166,6 +166,39 @@ namespace EmployeePayRoll_MVC.Controllers
             return View("GetAllEmployee", employees);
         }
 
+
+        [HttpGet]
+        [Route("Login")]
+        public IActionResult EmployeeLogin()
+        {
+            return View() ;
+        }
+
+        [HttpPost]
+        [Route("Login")]
+
+        public IActionResult EmployeeLogin([Bind]LoginModel loginEmployee)
+        {
+            try
+            {
+                var result = _employeeBusiness.EmployeeLogin(loginEmployee);
+                if(result == null)
+                {
+                    return NotFound("Login Failed!");
+                }
+                else
+                {
+                    HttpContext.Session.SetInt32("EmployeeId",loginEmployee.EmployeeId);
+                    HttpContext.Session.SetString("EmployeeName", loginEmployee.EmployeeName);
+                    return RedirectToAction("GetEmployeeDetials", new { empId = loginEmployee.EmployeeId});
+                }
+
+            }
+            catch (Exception )
+            {
+                return BadRequest();
+            }
+        }
 
     }
 }

@@ -5,6 +5,22 @@
       "PackagePath": "staticwebassets\\EmployeePayRoll_MVC.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\Hp\\source\\repos\\EmployeePayRoll\\EmployeePayRoll_MVC\\wwwroot\\Assets\\profile1.png",
+      "PackagePath": "staticwebassets\\Assets\\profile1.png"
+    },
+    {
+      "Id": "C:\\Users\\Hp\\source\\repos\\EmployeePayRoll\\EmployeePayRoll_MVC\\wwwroot\\Assets\\profile2.png",
+      "PackagePath": "staticwebassets\\Assets\\profile2.png"
+    },
+    {
+      "Id": "C:\\Users\\Hp\\source\\repos\\EmployeePayRoll\\EmployeePayRoll_MVC\\wwwroot\\Assets\\profile3.png",
+      "PackagePath": "staticwebassets\\Assets\\profile3.png"
+    },
+    {
+      "Id": "C:\\Users\\Hp\\source\\repos\\EmployeePayRoll\\EmployeePayRoll_MVC\\wwwroot\\Assets\\profile4.png",
+      "PackagePath": "staticwebassets\\Assets\\profile4.png"
+    },
+    {
       "Id": "C:\\Users\\Hp\\source\\repos\\EmployeePayRoll\\EmployeePayRoll_MVC\\wwwroot\\css\\GetAllEmployee.css",
       "PackagePath": "staticwebassets\\css\\GetAllEmployee.css"
     },

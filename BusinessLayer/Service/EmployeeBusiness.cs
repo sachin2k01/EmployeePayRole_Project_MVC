@@ -47,5 +47,10 @@ namespace BusinessLayer.Service
         {
             return _repo.SearchEmployeeByName(searchName);
         }
+
+        public EmployeeEntity EmployeeLogin(LoginModel login)
+        {
+            return _repo.EmployeeLogin(login);
+        }
     }
 }

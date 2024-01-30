@@ -299,6 +299,7 @@ C:\Users\Hp\source\repos\EmployeePayRoll\EmployeePayRoll_MVC\bin\Debug\net6.0\Az
 C:\Users\Hp\source\repos\EmployeePayRoll\EmployeePayRoll_MVC\bin\Debug\net6.0\Humanizer.dll
 C:\Users\Hp\source\repos\EmployeePayRoll\EmployeePayRoll_MVC\bin\Debug\net6.0\MessagePack.dll
 C:\Users\Hp\source\repos\EmployeePayRoll\EmployeePayRoll_MVC\bin\Debug\net6.0\MessagePack.Annotations.dll
+C:\Users\Hp\source\repos\EmployeePayRoll\EmployeePayRoll_MVC\bin\Debug\net6.0\System.Net.Http.Formatting.dll
 C:\Users\Hp\source\repos\EmployeePayRoll\EmployeePayRoll_MVC\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.Razor.Extensions.dll
 C:\Users\Hp\source\repos\EmployeePayRoll\EmployeePayRoll_MVC\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation.dll
 C:\Users\Hp\source\repos\EmployeePayRoll\EmployeePayRoll_MVC\bin\Debug\net6.0\Microsoft.AspNetCore.Razor.Language.dll
@@ -343,6 +344,7 @@ C:\Users\Hp\source\repos\EmployeePayRoll\EmployeePayRoll_MVC\bin\Debug\net6.0\Mi
 C:\Users\Hp\source\repos\EmployeePayRoll\EmployeePayRoll_MVC\bin\Debug\net6.0\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
 C:\Users\Hp\source\repos\EmployeePayRoll\EmployeePayRoll_MVC\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
 C:\Users\Hp\source\repos\EmployeePayRoll\EmployeePayRoll_MVC\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\Hp\source\repos\EmployeePayRoll\EmployeePayRoll_MVC\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
 C:\Users\Hp\source\repos\EmployeePayRoll\EmployeePayRoll_MVC\bin\Debug\net6.0\NuGet.Common.dll
 C:\Users\Hp\source\repos\EmployeePayRoll\EmployeePayRoll_MVC\bin\Debug\net6.0\NuGet.Configuration.dll
 C:\Users\Hp\source\repos\EmployeePayRoll\EmployeePayRoll_MVC\bin\Debug\net6.0\NuGet.DependencyResolver.Core.dll

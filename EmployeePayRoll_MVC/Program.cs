@@ -17,6 +17,17 @@ namespace EmployeePayRoll_MVC
             builder.Services.AddTransient<IEmployeeBusiness, EmployeeBusiness>();
             builder.Services.AddTransient<IEmployeeRepo, EmployeeRepo>();
 
+            // session adding
+            builder.Services.AddSession(options =>
+            {
+                options.IdleTimeout = TimeSpan.FromMinutes(30);
+                options.Cookie.HttpOnly = true;
+                options.Cookie.IsEssential = true;
+                options.Cookie.SameSite = SameSiteMode.None; // or SameSiteMode.Lax or SameSiteMode.Strict
+                options.Cookie.SecurePolicy = CookieSecurePolicy.Always;
+            });
+
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -29,6 +40,7 @@ namespace EmployeePayRoll_MVC
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+            app.UseSession();
 
             app.UseRouting();
 
@@ -37,8 +49,8 @@ namespace EmployeePayRoll_MVC
             app.MapControllerRoute(
                 name: "default",
                 pattern: "{controller=Home}/{action=Index}/{id?}");
-
             app.Run();
+
         }
     }
 }

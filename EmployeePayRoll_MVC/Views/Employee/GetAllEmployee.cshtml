@@ -9,7 +9,7 @@
         width:90%;
         display:flex;
         justify-content:center;
-        background-color: #5bc3eb;
+        background-color: #64E9FF;
         border-radius:24px;
         margin-top:40px;
         padding:0px 60px;
@@ -18,12 +18,16 @@
 
     thead,
     tfoot {
-        background-color: #42515F;
+        background-color: #009879;
         color: #fff;
+        font-weight:bold;
+        font-size:large;
     }
 
-    tbody {
-        background-color: #e4f0f5;
+    tbody tr {
+        border-bottom:1px solid #dddddd;
+
+        background-color:white;
         font-family:sans-serif;
         font-style:normal;
     }
@@ -32,18 +36,20 @@
 
     table {
         border-collapse: collapse;
-        border: 2px solid rgb(200, 200, 200);
+        margin:25px 0;
+        /*border: 2px solid rgb(200, 200, 200);*/
         letter-spacing: 1px;
         font-family: sans-serif;
         font-size: 0.9rem;
+        border-radius:10px 10px 0 0;
+        overflow:hidden;
+        box-shadow: 0 0 20px rgba(0,0,0,0.15);
     }
 
     td,
     th {
-        border: 1px solid rgb(190, 190, 190);
-        padding: 5px 10px;
-        text-align:center;
-            
+        /*border: 1px solid rgb(190, 190, 190);*/
+        padding: 12px 15px;
     }
 
     h1{
@@ -70,28 +76,42 @@
         justify-content:space-between;
     }
 
-    #searchForm{
-        border-radius: 24px;
+    .lgn-btn{
+        background-color: #BC6C25;
+        color:white;
+    }
 
+    .table tbody tr:nth-of-type(even){
+        background-color:#f3f3f3;
+
+    }
+
+    .table tbody tr:last-of-type{
+        border-bottom:2px solid #009879;
+    }
+
+    .btn-crt{
+        background-color:yellowgreen;
+        color:white;
     }
 
  
 
 </style>
 
-<h1>Employee Details</h1>
+<h1>EMPLOYEE DETAILS</h1>
 
 
 <form id="searchForm" method="get" asp-action="SearchEmployee" data-ajax="true" data-ajax-update="#searchResults">
     <div class="btn-ctn">
         <div>
-        <input type="search" placeholder="Search Employee Name.." value="@ViewData["GetAllEmployee"]" name="searchterm" style="width:500px; border-radius:10px;" />
+        <input type="search" placeholder="Search Employee Name.." value="@ViewData["GetAllEmployee"]" name="searchterm" style="width:500px; border-radius:10px; background-color:antiquewhite;" />
         <input type="submit" value="Search" class="btn btn-primary"  /> |
         @Html.ActionLink("Back", "GetAllEmployee", new { /*empId = item.EmployeeId*/ }, new { @class = "btn back-btn" })
         </div>
         <div>
-        @Html.ActionLink("Login", "", new { /*empId = item.EmployeeId*/ }, new { @class = "btn btn-danger" })
-        @Html.ActionLink("Create", "CreateEmployee", new { /*empId = item.EmployeeId*/ }, new { @class = "btn btn-warning" })
+            @Html.ActionLink("Login", "EmployeeLogin", new { /*empId = item.EmployeeId*/ }, new { @class = "btn lgn-btn" })
+        @Html.ActionLink("Create", "CreateEmployee", new { /*empId = item.EmployeeId*/ }, new { @class = "btn btn-crt" })
         </div>
     </div>
 </form>
@@ -135,9 +155,10 @@
             <td>
                 @Html.DisplayFor(modelItem => item.EmployeeName)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ImagePath)
-            </td>
+                <td>
+                    <img src="@Url.Content(item.ImagePath)" alt="Image" width="50" height="50" />
+                </td>
+
             <td>
                 @Html.DisplayFor(modelItem => item.Gender)
             </td>

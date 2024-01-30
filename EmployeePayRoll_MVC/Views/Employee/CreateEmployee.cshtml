@@ -3,36 +3,20 @@
 @{
     ViewData["Title"] = "CreateEmployee";
 }
+
 <style>
-    a {
-        text-decoration: none;
+    .form-image{
+        display:flex;
+        justify-content:space-between;
+        margin:20px 0px;
     }
-
-        a:link {
-            color: blue;
-        }
-
-        a:visited {
-            color: blue;
-        }
-
-        a:hover {
-            color: palevioletred;
-        }
-
-        .row{
-            align-self:center;
-        }
 </style>
 
+<h1>CREATE EMPLOYEE</h1>
 
-
-<h1>Create Employee</h1>
-
-<h4>EmployeeModel</h4>
 <hr />
 <div class="row">
-    <div class="col-md-4" style="align-content:center">
+    <div class="col-md-4" style="color:white;font-size:20px">
         <form asp-action="CreateEmployee">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
@@ -40,22 +24,49 @@
                 <input asp-for="EmployeeName" class="form-control" />
                 <span asp-validation-for="EmployeeName" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-image">
                 <label asp-for="ImagePath" class="control-label"></label>
-                <input asp-for="ImagePath" class="form-control" />
+                <div>
+                    @Html.RadioButtonFor(empModel => empModel.ImagePath, Url.Content("~/Assets/profile1.png"))
+                    <img class="profileImg", src="~/Assets/profile1.png" />
+                </div>
+                <div>
+                    @Html.RadioButtonFor(empModel => empModel.ImagePath, Url.Content("~/Assets/profile2.png"))
+                    <img class="profileImg" , src="~/Assets/profile2.png" />
+                </div>
+                <div>
+                    @Html.RadioButtonFor(empModel => empModel.ImagePath, Url.Content("~/Assets/profile3.png"))
+                    <img class="profileImg" , src="~/Assets/profile3.png" />
+                </div>
+                <div>
+                    @Html.RadioButtonFor(empModel => empModel.ImagePath, Url.Content("~/Assets/profile4.png"))
+                    <img class="profileImg" , src="~/Assets/profile4.png" />
+                </div>
                 <span asp-validation-for="ImagePath" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Gender" class="control-label"></label>
-                <input asp-for="Gender" class="form-control" />
+                <label asp-for="Gender" class="control-label" style="margin-right:20px;"></label>
+                @Html.RadioButtonFor(empModel => empModel.Gender, "Male")
+                <label style="margin-right:20px;">Male</label>
+                @Html.RadioButtonFor(empModel => empModel.Gender, "Female")
+                <label>Female</label>
                 <span asp-validation-for="Gender" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group" style="padding:9px 0px">
                 <label asp-for="Department" class="control-label"></label>
-                <input asp-for="Department" class="form-control" />
+                <div>
+                    @Html.DropDownListFor(empModel => empModel.Department, new SelectList(new[]
+                        {
+                    new SelectListItem { Text = "IT", Value = "IT" },
+                    new SelectListItem { Text = "HR", Value = "HR" },
+                    new SelectListItem { Text = "Finance", Value = "Finance" },
+                    new SelectListItem { Text = "Others", Value = "Others" }
+                    }, "Value", "Text"), "-- Select Department --", new { @class = "form-control" })
+                    @Html.ValidationMessageFor(empModel => empModel.Department, "", new { @class = "text-danger" })
+                </div>
                 <span asp-validation-for="Department" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group" >
                 <label asp-for="Salary" class="control-label"></label>
                 <input asp-for="Salary" class="form-control" />
                 <span asp-validation-for="Salary" class="text-danger"></span>
@@ -71,14 +82,11 @@
                 <span asp-validation-for="Notes" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Create" class="btn btn-primary" style="margin:10px 0px;" /> |
+                <a asp-action="GetAllEmployee" style="color:white;">Back to List</a>
             </div>
         </form>
     </div>
-</div>
-
-<div>
-    <a asp-action="GetAllEmployee">Back to List</a>
 </div>
 
 @section Scripts {

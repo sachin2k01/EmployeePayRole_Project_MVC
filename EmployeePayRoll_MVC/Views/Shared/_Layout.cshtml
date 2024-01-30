@@ -9,11 +9,13 @@
     <link rel="stylesheet" href="~/EmployeePayRoll_MVC.styles.css" asp-append-version="true" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
 </head>
-<body style="background-color:#42515F">
-    <header>
+<body style="background: #0172AF;
+background: linear-gradient(0deg, #0172AF, #74FEBD);
+">
+    <header style="background-color:#FEFEE3">
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Employee PayRoll</a>
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">EMPLOYEE PAYROLL</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -21,10 +23,10 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index" style="font-family:Calibri;">HOME</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Employee" asp-action="GetAllEmployee">Get Employee</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Employee" asp-action="GetAllEmployee" style="font-family:Calibri;">DASHBOARD</a>
                         </li>
                     </ul>
                 </div>

@@ -20,5 +20,7 @@ namespace RepositoryLayer.Interface
         public EmployeeEntity UpdateEmployee(EmployeeEntity employee);
 
         public List<EmployeeEntity> SearchEmployeeByName(string searchName);
+
+        public EmployeeEntity EmployeeLogin(LoginModel login);
     }
 }
