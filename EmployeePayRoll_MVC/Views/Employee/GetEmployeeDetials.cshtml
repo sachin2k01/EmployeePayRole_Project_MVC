@@ -19,6 +19,9 @@
 <h1>EMPLOYEE DETAILS</h1>
 
 <div>
+    <div style="display:flex; justify-content:center; width:300px">
+        <img src="@Url.Content(Model.ImagePath)" alt="Image" width="50" height="50" />
+    </div>
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
@@ -32,12 +35,6 @@
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.EmployeeName)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ImagePath)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ImagePath)
         </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Gender)

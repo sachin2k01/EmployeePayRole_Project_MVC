@@ -7,10 +7,12 @@ namespace EmployeePayRoll_MVC.Controllers
 {
     public class EmployeeController : Controller
     {
+        private readonly ILogger<EmployeeController> _logger;
         private readonly IEmployeeBusiness _employeeBusiness;
-        public EmployeeController(IEmployeeBusiness employeeBusiness)
+        public EmployeeController(IEmployeeBusiness employeeBusiness, ILogger<EmployeeController> logger)
         {
-            _employeeBusiness = employeeBusiness;           
+            _employeeBusiness = employeeBusiness;
+            _logger = logger;
         }
 
         [HttpGet("AllEmp")]
@@ -43,6 +45,7 @@ namespace EmployeePayRoll_MVC.Controllers
             }
             catch (Exception ex)
             {
+                _logger.LogError(ex.Message, ex);
                 ModelState.AddModelError(string.Empty, "An error occurred while processing your request.");
                 return View(empModel);
             }
@@ -72,6 +75,7 @@ namespace EmployeePayRoll_MVC.Controllers
             }
             catch (Exception)
             {
+                _logger.LogTrace("Employee with Id "+empId+"is deleted");
                 return RedirectToAction("GetAllEmployee");
             }
         }
