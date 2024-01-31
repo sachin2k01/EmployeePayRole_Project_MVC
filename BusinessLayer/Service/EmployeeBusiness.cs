@@ -52,5 +52,9 @@ namespace BusinessLayer.Service
         {
             return _repo.EmployeeLogin(login);
         }
+        public List<EmployeeEntity> GetEmployeeByDate(DateModel Dates)
+        {
+            return _repo.GetEmployeeByDate(Dates);
+        }
     }
 }

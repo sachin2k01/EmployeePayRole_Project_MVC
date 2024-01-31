@@ -204,5 +204,24 @@ namespace EmployeePayRoll_MVC.Controllers
             }
         }
 
+        [HttpGet]
+        [Route("ByDate")]
+        public IActionResult GetByDate()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [Route("ByDate")]
+        public IActionResult GetByDate(DateModel date)
+        {
+            if(date == null)
+            {
+                return BadRequest();
+            }
+            List<EmployeeEntity> employeeEntities = _employeeBusiness.GetEmployeeByDate(date);
+            return View("GetAllEmployee", employeeEntities);
+        }
+
     }
 }

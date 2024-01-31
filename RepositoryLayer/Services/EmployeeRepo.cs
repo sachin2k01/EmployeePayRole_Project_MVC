@@ -1,4 +1,5 @@
-﻿using Microsoft.Data.SqlClient;
+﻿using Microsoft.AspNetCore.Connections;
+using Microsoft.Data.SqlClient;
 using ModelLayer.Models;
 using RepositoryLayer.Entity;
 using RepositoryLayer.Interface;
@@ -236,6 +237,48 @@ namespace RepositoryLayer.Services
                 return null;
             }
             return employee;
+        }
+
+
+        public List<EmployeeEntity> GetEmployeeByDate(DateModel Dates)
+        {
+            List<EmployeeEntity> employees = new List<EmployeeEntity>();
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                SqlCommand sqlCommand = new SqlCommand("spGetEmpByDateRange", connection);
+                sqlCommand.CommandType = CommandType.StoredProcedure;
+                sqlCommand.Parameters.AddWithValue("@SDate", Dates.SDate);
+                sqlCommand.Parameters.AddWithValue("@EDate", Dates.LDate);
+                try
+                {
+                    using (SqlDataReader reader = sqlCommand.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            EmployeeEntity employee = new EmployeeEntity()
+                            {
+                                EmployeeId = Convert.ToInt32(reader["EmployeeId"]),
+                                EmployeeName = reader["EmployeeName"].ToString(),
+                                ImagePath = reader["ImagePath"].ToString(),
+                                Gender = reader["Gender"].ToString(),
+                                Department = reader["Department"].ToString(),
+                                Salary = Convert.ToDecimal(reader["Salary"]),
+                                StartDate = Convert.ToDateTime(reader["StartDate"]),
+                                Notes = reader["Notes"].ToString()
+                            };
+                            employees.Add(employee);
+
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+            }
+            return employees;
+
         }
     }
 

@@ -22,5 +22,7 @@ namespace RepositoryLayer.Interface
         public List<EmployeeEntity> SearchEmployeeByName(string searchName);
 
         public EmployeeEntity EmployeeLogin(LoginModel login);
+
+        public List<EmployeeEntity> GetEmployeeByDate(DateModel Dates);
     }
 }
