@@ -33,6 +33,10 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\Hp\\source\\repos\\EmployeePayRoll\\EmployeePayRoll_MVC\\wwwroot\\js\\CustomEmployee.js",
+      "PackagePath": "staticwebassets\\js\\CustomEmployee.js"
+    },
+    {
       "Id": "C:\\Users\\Hp\\source\\repos\\EmployeePayRoll\\EmployeePayRoll_MVC\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

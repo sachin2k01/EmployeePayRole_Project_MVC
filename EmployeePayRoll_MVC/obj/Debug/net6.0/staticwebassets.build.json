@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "eytCuGByT9OpJPUbEV1cXhJ43uKjiYsjBoLskdG9r9g=",
+  "Hash": "F8cQ91yDlRMohA3fOqXgaC8pKyR0cY6NVWoj9CsNy9E=",
   "Source": "EmployeePayRoll_MVC",
   "BasePath": "_content/EmployeePayRoll_MVC",
   "Mode": "Default",
@@ -186,6 +186,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\Hp\\source\\repos\\EmployeePayRoll\\EmployeePayRoll_MVC\\wwwroot\\js\\CustomEmployee.js",
+      "SourceId": "EmployeePayRoll_MVC",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Hp\\source\\repos\\EmployeePayRoll\\EmployeePayRoll_MVC\\wwwroot\\",
+      "BasePath": "_content/EmployeePayRoll_MVC",
+      "RelativePath": "js/CustomEmployee.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\CustomEmployee.js"
     },
     {
       "Identity": "C:\\Users\\Hp\\source\\repos\\EmployeePayRoll\\EmployeePayRoll_MVC\\wwwroot\\js\\site.js",

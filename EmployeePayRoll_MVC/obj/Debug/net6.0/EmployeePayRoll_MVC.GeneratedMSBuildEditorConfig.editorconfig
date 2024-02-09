@@ -18,6 +18,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes = true
 build_property.MSBuildProjectDirectory = C:\Users\Hp\source\repos\EmployeePayRoll\EmployeePayRoll_MVC
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/Hp/source/repos/EmployeePayRoll/EmployeePayRoll_MVC/Views/Ajax/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWpheFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Hp/source/repos/EmployeePayRoll/EmployeePayRoll_MVC/Views/Employee/CreateEmployee.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcQ3JlYXRlRW1wbG95ZWUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
